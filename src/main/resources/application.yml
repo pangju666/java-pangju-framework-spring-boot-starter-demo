@@ -1,0 +1,86 @@
+server:
+  servlet:
+    encoding:
+      force: true
+
+spring:
+  threads:
+    virtual:
+      enabled: true
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+#  cache:
+#    type: redis
+#    redis:
+#      cache-null-values: true
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://mysql:3306/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+#    username: root
+#    password: gTz_2021
+#    hikari:
+#      max-lifetime: 2879000
+#  data:
+#    redis:
+#      host: redis
+#      password: gTz_2021
+#      database: 6
+#      lettuce:
+#        cluster:
+#          refresh:
+#            adaptive: true
+#            period: 20
+#    mongodb:
+#      host: mongodb.default.svc.cluster.local
+#      database: gtz_invoice
+#      username: root
+#      password: gTz_2021
+#      authentication-database: admin
+#  kafka:
+#    bootstrap-servers: kafka.default.svc.cluster.local:9092
+#    producer:
+#      retries: 1
+#      batch-size: 16384
+#      buffer-memory: 1024000
+#      acks: 1
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+#      properties:
+#        spring:
+#          json:
+#            trusted:
+#              packages: "*"
+#    consumer:
+#      group-id: gtz-invoice
+#      enable-auto-commit: false
+#      auto-offset-reset: earliest
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+#      properties:
+#        spring:
+#          json:
+#            trusted:
+#              packages: "*"
+#    listener:
+#      ack-mode: manual_immediate
+
+#mybatis-plus:
+#  type-aliases-package: io.github.pangju666.model.entity
+#  mapper-locations: classpath:mapper/*.xml
+#  configuration:
+#    shrink-whitespaces-in-sql: true
+#  global-config:
+#    banner: false
+#    db-config:
+#      column-format: "`%s`"
+#      update-strategy: ignored
+#      id-type: auto
+#  plugins:
+#    block-attack:
+#      enabled: true
+#    optimistic-locker:
+#      enabled: true
+
+logging:
+  #config: classpath:log4j2/local.yml

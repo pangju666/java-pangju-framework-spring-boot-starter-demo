@@ -1,0 +1,13 @@
+{
+  "outPath": "target/smart-doc",
+  "packageFilters": "cn.gtzhang.invoice.web.controller.*",
+  "projectName": "古探长发票服务",
+  "appToken": "823b0f9dfabc4ab9bd2731dddd32354e",
+  "openUrl": "http://swagger.int/api",
+  "replace": true,
+  "tornaDebug": true,
+  "framework": "spring",
+  "showValidation": true,
+  "debugEnvName": "本地环境",
+  "debugEnvUrl": "http://gtz-api.int/invoice"
+}
