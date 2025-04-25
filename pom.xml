@@ -8,7 +8,7 @@
         <artifactId>pangju-framework-spring-boot-starter-parent</artifactId>
         <version>1.0.0</version>
     </parent>
-    <artifactId>pangju-framework-spring-boot-starter-test</artifactId>
+    <artifactId>pangju-framework-spring-boot-starter-demo</artifactId>
     <url>https://github.com/pangju666/java-pangju-framework-spring-boot-starter-test</url>
 
 	<properties>
