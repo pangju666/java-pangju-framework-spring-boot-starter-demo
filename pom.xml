@@ -9,23 +9,25 @@
         <version>1.0.0</version>
     </parent>
     <artifactId>pangju-framework-spring-boot-starter-demo</artifactId>
-    <url>https://github.com/pangju666/java-pangju-framework-spring-boot-starter-test</url>
+    <url>https://github.com/pangju666/java-pangju-framework-spring-boot-starter-demo</url>
 
 	<properties>
 		<java.version>21</java.version>
 	</properties>
 
 	<dependencies>
-        <!--<dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+		<!-- Web模块 -->
+        <dependency>
+			<groupId>io.github.pangju666</groupId>
+            <artifactId>pangju-framework-web-spring-boot-starter</artifactId>
 			<exclusions>
 				<exclusion>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-starter-logging</artifactId>
 				</exclusion>
 			</exclusions>
-        </dependency>-->
+        </dependency>
+		<!-- 校验模块 -->
         <dependency>
             <groupId>io.github.pangju666</groupId>
             <artifactId>pangju-framework-validation-spring-boot-starter</artifactId>
@@ -40,15 +42,19 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-log4j2</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>io.github.pangju666</groupId>
+			<artifactId>pangju-framework-data-mybatis-plus-spring-boot-starter</artifactId>
+		</dependency>
 
-		<!--<dependency>
+		<dependency>
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>p6spy</groupId>
 			<artifactId>p6spy</artifactId>
-		</dependency>-->
+		</dependency>
 
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
@@ -60,13 +66,8 @@
         </dependency>
 
         <dependency>
-            <groupId>org.spockframework</groupId>
-            <artifactId>spock-spring</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
+			<groupId>io.github.pangju666</groupId>
+			<artifactId>pangju-framework-spock-test-spring-boot-starter</artifactId>
             <scope>test</scope>
 			<exclusions>
 				<exclusion>

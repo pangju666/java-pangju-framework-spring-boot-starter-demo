@@ -1,15 +1,11 @@
 package io.github.pangju666.test.service;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import jakarta.validation.Validator;
+import io.github.pangju666.test.repository.TestRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+@AllArgsConstructor
 @Service
 public class TestService {
-	private final Validator validator;
-
-	public TestService(Validator validator) {
-		this.validator = validator;
-	}
+	private final TestRepository testRepository;
 }

@@ -1,4 +1,5 @@
 server:
+  port: 80
   servlet:
     encoding:
       force: true
@@ -8,19 +9,37 @@ spring:
     virtual:
       enabled: true
   jackson:
+    # 设置时区
     time-zone: GMT+8
+    # 设置时间格式
     date-format: yyyy-MM-dd HH:mm:ss
-#  cache:
+    # 设置语言
+    locale: CHINESE
+    # 序列化策略
+    serialization:
+      # Date对象序列化为时间戳
+      write-dates-as-timestamps: true
+      # 时间戳禁止精准到纳秒
+      write-date-timestamps-as-nanoseconds: false
+    generator:
+      # 浮点数过大时防止返回科学计数
+      write-bigdecimal-as-plain: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:p6spy:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: root
+    password: gTz_2021
+    hikari:
+      max-lifetime: 2879000
+
+
+
+
+  #  cache:
 #    type: redis
 #    redis:
 #      cache-null-values: true
-#  datasource:
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://mysql:3306/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
-#    username: root
-#    password: gTz_2021
-#    hikari:
-#      max-lifetime: 2879000
+
 #  data:
 #    redis:
 #      host: redis
@@ -65,22 +84,22 @@ spring:
 #    listener:
 #      ack-mode: manual_immediate
 
-#mybatis-plus:
-#  type-aliases-package: io.github.pangju666.model.entity
-#  mapper-locations: classpath:mapper/*.xml
-#  configuration:
-#    shrink-whitespaces-in-sql: true
-#  global-config:
-#    banner: false
-#    db-config:
-#      column-format: "`%s`"
-#      update-strategy: ignored
-#      id-type: auto
-#  plugins:
-#    block-attack:
-#      enabled: true
-#    optimistic-locker:
-#      enabled: true
+mybatis-plus:
+  type-aliases-package: io.github.pangju666.test.model.entity
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    shrink-whitespaces-in-sql: true
+  global-config:
+    banner: false
+    db-config:
+      column-format: "`%s`"
+      update-strategy: ALWAYS
+      id-type: auto
+  plugins:
+    block-attack:
+      enabled: true
+    optimistic-locker:
+      enabled: true
 
-logging:
+#logging:
   #config: classpath:log4j2/local.yml
