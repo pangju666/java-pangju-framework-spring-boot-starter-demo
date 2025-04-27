@@ -26,30 +26,28 @@ spring:
       write-bigdecimal-as-plain: true
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:p6spy:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    url: jdbc:mysql://172.16.0.249:3306/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
     username: root
     password: gTz_2021
     hikari:
       max-lifetime: 2879000
+  cache:
+     type: redis
+     redis:
+       cache-null-values: true
+  data:
+    redis:
+      host: 172.16.0.249
+      password: gTz_2021
+      database: 0
+      lettuce:
+        cluster:
+          refresh:
+            adaptive: true
+            period: 20
 
 
 
-
-  #  cache:
-#    type: redis
-#    redis:
-#      cache-null-values: true
-
-#  data:
-#    redis:
-#      host: redis
-#      password: gTz_2021
-#      database: 6
-#      lettuce:
-#        cluster:
-#          refresh:
-#            adaptive: true
-#            period: 20
 #    mongodb:
 #      host: mongodb.default.svc.cluster.local
 #      database: gtz_invoice
