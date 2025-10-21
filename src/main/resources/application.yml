@@ -48,34 +48,34 @@ spring:
           test2:
             host: 127.0.0.1
             database: test2
-#    redis:
-#      dynamic:
-#        primary: test
-#        databases:
-#          test:
-#            host: 127.0.0.1
-#            database: 0
-#            key-serializer: string
-#            value-serializer: string
-#            hash-key-serializer: string
-#            hash-value-serializer: string
-#            lettuce:
-#              cluster:
-#                refresh:
-#                  adaptive: true
-#                  period: 20
-#          test2:
-#            host: 127.0.0.1
-#            database: 1
-#            key-serializer: string
-#            value-serializer: string
-#            hash-key-serializer: string
-#            hash-value-serializer: string
-#            lettuce:
-#              cluster:
-#                refresh:
-#                  adaptive: true
-#                  period: 20
+    redis:
+      dynamic:
+        primary: test
+        databases:
+          test:
+            host: 127.0.0.1
+            database: 0
+            key-serializer: string
+            value-serializer: string
+            hash-key-serializer: string
+            hash-value-serializer: string
+            lettuce:
+              cluster:
+                refresh:
+                  adaptive: true
+                  period: 20
+          test2:
+            host: 127.0.0.1
+            database: 1
+            key-serializer: string
+            value-serializer: string
+            hash-key-serializer: string
+            hash-value-serializer: string
+            lettuce:
+              cluster:
+                refresh:
+                  adaptive: true
+                  period: 20
 
 #    mongodb:
 #      host: mongodb.default.svc.cluster.local
@@ -141,8 +141,6 @@ pangju:
     log:
       kafka:
         topic: test
-      disruptor:
-        buffer-size: 1
 
 
   #logging:

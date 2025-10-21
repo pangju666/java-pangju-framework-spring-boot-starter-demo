@@ -19,17 +19,20 @@
 		<dependency>
 			<groupId>io.github.pangju666</groupId>
 			<artifactId>pangju-framework-web-spring-boot-starter</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-logging</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>io.github.pangju666</groupId>
-			<artifactId>pangju-framework-validation-spring-boot-starter</artifactId>
+			<artifactId>pangju-framework-web-crypto-spring-boot-starter</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>io.github.pangju666</groupId>
+			<artifactId>pangju-framework-web-validation-spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.github.pangju666</groupId>
+			<artifactId>pangju-framework-web-log-spring-boot-starter</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>io.github.pangju666</groupId>
 			<artifactId>pangju-framework-data-mybatis-plus-spring-boot-starter</artifactId>
@@ -42,25 +45,29 @@
 			<groupId>io.github.pangju666</groupId>
 			<artifactId>pangju-framework-data-mongodb-spring-boot-starter</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>io.github.pangju666</groupId>
-			<artifactId>pangju-framework-cache-spring-boot-starter</artifactId>
+			<artifactId>pangju-framework-validation-spring-boot-starter</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>io.github.pangju666</groupId>
-			<artifactId>pangju-framework-web-validation-spring-boot-starter</artifactId>
+			<artifactId>pangju-framework-spock-test-spring-boot-starter</artifactId>
 		</dependency>
-		<!--<dependency>
+
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-log4j2</artifactId>
-		</dependency>-->
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
+
 		<dependency>
-			<groupId>org.redisson</groupId>
-			<artifactId>redisson-spring-boot-starter</artifactId>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-yaml</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.kafka</groupId>
-			<artifactId>spring-kafka</artifactId>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
 		</dependency>
 
 		<dependency>
@@ -71,38 +78,6 @@
 			<groupId>p6spy</groupId>
 			<artifactId>p6spy</artifactId>
 		</dependency>
-
-		<dependency>
-			<groupId>com.lmax</groupId>
-			<artifactId>disruptor</artifactId>
-			<optional>true</optional>
-		</dependency>
-
-        <dependency>
-            <groupId>com.fasterxml.jackson.dataformat</groupId>
-            <artifactId>jackson-dataformat-yaml</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-		<dependency>
-			<groupId>io.github.pangju666</groupId>
-			<artifactId>pangju-commons-crypto</artifactId>
-			<optional>true</optional>
-		</dependency>
-
-        <dependency>
-			<groupId>io.github.pangju666</groupId>
-			<artifactId>pangju-framework-spock-test-spring-boot-starter</artifactId>
-            <scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<artifactId>commons-logging</artifactId>
-					<groupId>commons-logging</groupId>
-				</exclusion>
-			</exclusions>
-        </dependency>
     </dependencies>
 
     <build>
