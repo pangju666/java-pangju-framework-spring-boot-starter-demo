@@ -37,17 +37,33 @@ class TestRepositorySpec extends Specification {
 
 	def "测试查询单条数据"() {
 		when:
-		def testDO = repository.getById(10003L)
+		def testDO = repository.getById(1000L)
 
 		then:
-		testDO.getLabel() == "mAmhnTwfHt"
+		testDO.getLabel() == "suyMcmbDhu"
 	}
 
-	def "测试查询多条数据"() {
+	def "测试查询多条数据并排序"() {
 		when:
-		def testDO = repository.listByIds(List.of(10003L, 10021L, 10020L))
+		def testDO = repository.listByIdsOrderById(List.of(1L, 100L, 1000L))
 
 		then:
-		testDO.size() == 3
+		testDO.getFirst().getId() == 1L
+	}
+
+	def "测试查询多条数据并逆向排序"() {
+		when:
+		def testDO = repository.listByIdsOrderByyIdDesc(List.of(1L, 100L, 1000L))
+
+		then:
+		testDO.getFirst().getId() == 1000L
+	}
+
+	def "测试查询新数据并缓存"() {
+		when:
+		def testDO = repository.getById(10001L)
+
+		then:
+		testDO.getId() == 10001L && cacheManager.get("test_cache", "10001L")
 	}
 }

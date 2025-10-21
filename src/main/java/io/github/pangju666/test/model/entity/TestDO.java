@@ -1,14 +1,14 @@
 package io.github.pangju666.test.model.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import io.github.pangju666.framework.data.mybatisplus.model.entity.auto.AutoIdLogicBasicDO;
-import jakarta.annotation.Nullable;
-import lombok.*;
+import io.github.pangju666.framework.data.mybatisplus.model.entity.auto.AutoIdLogicBasicEntity;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
 @TableName("test")
-public class TestDO extends AutoIdLogicBasicDO {
+public class TestDO extends AutoIdLogicBasicEntity {
 	private String label;
 
 	public TestDO() {
