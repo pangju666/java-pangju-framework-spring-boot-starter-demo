@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 //@MapperScan("io.github.pangju666.test.mapper")
 @SpringBootApplication
 public class Application {
-	public static void main(String[] args) {
+	void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
 }
