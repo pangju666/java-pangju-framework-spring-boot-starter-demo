@@ -1,5 +1,8 @@
 package io.github.pangju666.test
 
+import io.github.pangju666.commons.image.enums.WatermarkDirection
+import io.github.pangju666.framework.boot.image.core.impl.GMImageTemplate
+import io.github.pangju666.framework.boot.image.model.GMImageOperation
 import io.github.pangju666.test.model.entity.TestDO
 import io.github.pangju666.test.repository.TestRepository
 import org.apache.commons.lang3.RandomStringUtils
@@ -12,6 +15,8 @@ import spock.lang.Specification
 class TestRepositorySpec extends Specification {
 	@Autowired
 	TestRepository repository
+	@Autowired
+	GMImageTemplate imageTemplate
 
 	def "测试逻辑删除"() {
 		setup:
@@ -65,5 +70,28 @@ class TestRepositorySpec extends Specification {
 
 		then:
 		testDO.getId() == 10001L && cacheManager.get("test_cache", "10001L")
+	}
+
+	def "a"() {
+		setup:
+		// 不支持中文路径
+		File inputFile = new File("C:\\Users\\nullp\\Downloads\\IMG_20190830_154401.jpg")
+		File outputFile = new File("C:\\Users\\nullp\\Downloads\\output.jpg")
+		GMImageOperation imageOperation = GMImageOperation.builder()
+			.watermarkText("test")
+			//.watermarkImage(new File("C:\\Users\\nullp\\Downloads\\watermark.png"))
+			.watermarkDirection(WatermarkDirection.TOP_RIGHT)
+			.watermarkTextFontName("Arial")
+			//.watermarkTextFontSize(30)
+		//.watermarkPosition(20, 20)
+		//.textWatermarkFontSize(100)
+		//.imageWatermarkScaleRatio(0.5)
+		//.resizeFilter(ResampleFilter.LANCZOS)
+		//.quality(75)
+			//.cropByOffset(20, 20, 20, 20)
+			.scaleByRange(500, 500)
+			.stripProfiles(true)
+			.build()
+		imageTemplate.execute(inputFile, outputFile, imageOperation)
 	}
 }

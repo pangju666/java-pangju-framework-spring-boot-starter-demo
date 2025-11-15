@@ -24,17 +24,17 @@ public class TestRepository extends BaseRepository<TestMapper, TestDO> /*impleme
 		return super.listByIds(ids);
 	}
 
-	//@HashCacheable(cache = "test_cache", key = "#p0", sortFields = "id")
+	/*//@HashCacheable(cache = "test_cache", key = "#p0", sortFields = "id")
 	public List<TestDO> listByIdsOrderById(Collection<Long> ids) {
-		return listByColumnValues(lambdaQuery().orderByAsc(TestDO::getLabel),
-			TestDO::getId, ids);
+		*//*return listByColumnValues(lambdaQuery().orderByAsc(TestDO::getLabel),
+			TestDO::getId, ids);*//*
 	}
 
 	//@HashCacheable(cache = "test_cache", key = "#p0", sortFields = "id", reverseOrder = true)
 	public List<TestDO> listByIdsOrderByyIdDesc(Collection<Long> ids) {
-		return listByColumnValues(lambdaQuery().orderByAsc(TestDO::getLabel),
-			TestDO::getId, ids);
-	}
+		*//*return listByColumnValues(lambdaQuery().orderByAsc(TestDO::getLabel),
+			TestDO::getId, ids);*//*
+	}*/
 
 	//@HashCacheable(cache = "test_cache", key = "#p0")
 	@Override

@@ -2,25 +2,31 @@ package io.github.pangju666.test.service;
 
 import io.github.pangju666.test.model.entity.TestDO;
 import io.github.pangju666.test.repository.TestRepository;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class TestService {
-	private final TestRepository testRepository;
-	private RedisTemplate<Object, Object> testRedisTemplate;
-	private RedisTemplate<Object, Object> test1RedisTemplate;
+	//@Autowired(required = false)
+	private TestRepository testRepository;
+	/*private RedisTemplate<Object, Object> test1RedisTemplate;
+	private RedisTemplate<Object, Object> test2RedisTemplate;
+	private StringRedisTemplate stringRedisTemplate;
+	private RedisTemplate<Object, Object> redisTemplate;*/
 
-	public TestService(TestRepository testRepository,
-					   //@Qualifier("testRedisTemplate")
-					   RedisTemplate<Object, Object> testRedisTemplate//,
-					   //@Qualifier("test2RedisTemplate")
-					   /*RedisTemplate<Object, Object> test1RedisTemplate*/) {
-		this.testRepository = testRepository;
-		this.testRedisTemplate = testRedisTemplate;
-		this.test1RedisTemplate = testRedisTemplate;
+	public TestService(/*@Autowired(required = false) TestRepository testRepository,*/
+					  /* @Qualifier("testRedisTemplate")
+					   RedisTemplate<Object, Object> test1RedisTemplate,
+					   @Qualifier("test2RedisTemplate")
+					   RedisTemplate<Object, Object> test2RedisTemplate,
+					   StringRedisTemplate stringRedisTemplate,
+					   RedisTemplate<Object, Object> redisTemplate*/) {
+		//this.testRepository = testRepository;
+		/*this.test1RedisTemplate = test1RedisTemplate;
+		this.test2RedisTemplate = test2RedisTemplate;
+		this.stringRedisTemplate = stringRedisTemplate;
+		this.redisTemplate = redisTemplate;*/
 	}
 
 	public List<TestDO> list() {
@@ -28,6 +34,6 @@ public class TestService {
 	}
 
 	public String getRedisValue(String key1, String key2) {
-		return testRedisTemplate.opsForValue().get(key1) + "," + test1RedisTemplate.opsForValue().get(key2);
+		return "";
 	}
 }

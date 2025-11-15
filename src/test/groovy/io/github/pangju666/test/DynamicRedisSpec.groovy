@@ -1,9 +1,11 @@
 package io.github.pangju666.test
 
-import io.github.pangju666.framework.data.redis.bean.ScanRedisTemplate
+import io.github.pangju666.test.repository.MongoRepository1
+import io.github.pangju666.test.repository.MongoRepository2
 import io.github.pangju666.test.service.TestService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.data.mongodb.core.MongoTemplate
 import spock.lang.Specification
 
 @SpringBootTest(classes = Application.class)
@@ -11,7 +13,13 @@ class DynamicRedisSpec extends Specification {
 	@Autowired
 	TestService testService
 	@Autowired
-	ScanRedisTemplate<Object, Object> testRedisTemplate
+	MongoRepository1 repository1
+	@Autowired
+	MongoRepository2 repository2
+	@Autowired
+	MongoTemplate gridFsTemplate
+	/*@Autowired
+	ScanRedisTemplate<Object, Object> testRedisTemplate*/
 	/*@Qualifier("redis-test-template")
 	@Autowired
 	RedisTemplate<Object, Object> testRedisTemplate
@@ -29,7 +37,6 @@ class DynamicRedisSpec extends Specification {
 
 	def "test"() {
 		setup:
-		println testRedisTemplate.opsForValue().get("sadad")
-		//println testService.getRedisValue("sadad", "asdadadadad")
+		println testService.getRedisValue("", "")
 	}
 }

@@ -1,8 +1,8 @@
 package io.github.pangju666.test
 
-import io.github.pangju666.framework.data.redis.bean.JavaScanRedisTemplate
-import io.github.pangju666.framework.data.redis.bean.JsonScanRedisTemplate
-import io.github.pangju666.framework.data.redis.bean.StringScanRedisTemplate
+import io.github.pangju666.framework.data.redis.core.JavaScanRedisTemplate
+import io.github.pangju666.framework.data.redis.core.JsonScanRedisTemplate
+import io.github.pangju666.framework.data.redis.core.StringScanRedisTemplate
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import spock.lang.Specification

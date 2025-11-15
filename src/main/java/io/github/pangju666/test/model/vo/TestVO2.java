@@ -1,7 +1,5 @@
 package io.github.pangju666.test.model.vo;
 
-import io.github.pangju666.framework.autoconfigure.enums.Algorithm;
-import io.github.pangju666.framework.autoconfigure.jackson.annotation.EncryptFormat;
 import io.github.pangju666.test.enums.TestEnum;
 import lombok.Data;
 
@@ -27,12 +25,12 @@ public class TestVO2 {
 	private String phoneNumber;
 	//@EncryptFormat(algorithm = Algorithm.BASE64)
 	private String phoneNumber2;
-	@EncryptFormat(algorithm = Algorithm.BASE64)
+	//@EncryptFormat(key = "", algorithm = Algorithm.AES256)
 	private List<String> phoneNumbers;
-	@EncryptFormat(algorithm = Algorithm.BASE64)
+	//@EncryptFormat(key = "", algorithm = Algorithm.AES256)
 	private Map<String, String> map;
-	@EncryptFormat(algorithm = Algorithm.BASE64)
+	//@EncryptFormat(key = "", algorithm = Algorithm.AES256)
 	private Map<String, Integer> intMap;
-	@EncryptFormat(algorithm = Algorithm.BASE64)
+	//@EncryptFormat(key = "", algorithm = Algorithm.AES256)
 	private List<Integer> intList;
 }

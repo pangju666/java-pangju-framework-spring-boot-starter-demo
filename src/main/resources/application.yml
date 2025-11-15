@@ -37,8 +37,6 @@ spring:
        cache-null-values: true
   data:
     mongodb:
-      host: 127.0.0.1
-      database: test1
       dynamic:
         primary: test1
         databases:
@@ -48,41 +46,34 @@ spring:
           test2:
             host: 127.0.0.1
             database: test2
-#    redis:
-#      dynamic:
-#        primary: test
-#        databases:
-#          test:
-#            host: 127.0.0.1
-#            database: 0
-#            key-serializer: string
-#            value-serializer: string
-#            hash-key-serializer: string
-#            hash-value-serializer: string
-#            lettuce:
-#              cluster:
-#                refresh:
-#                  adaptive: true
-#                  period: 20
-#          test2:
-#            host: 127.0.0.1
-#            database: 1
-#            key-serializer: string
-#            value-serializer: string
-#            hash-key-serializer: string
-#            hash-value-serializer: string
-#            lettuce:
-#              cluster:
-#                refresh:
-#                  adaptive: true
-#                  period: 20
-
-#    mongodb:
-#      host: mongodb.default.svc.cluster.local
-#      database: gtz_invoice
-#      username: root
-#      password: gTz_2021
-#      authentication-database: admin
+    redis:
+      dynamic:
+        primary: test
+        databases:
+          test:
+            host: 127.0.0.1
+            database: 0
+            key-serializer: string
+            value-serializer: string
+            hash-key-serializer: JSON
+            hash-value-serializer: JSON
+            lettuce:
+              cluster:
+                refresh:
+                  adaptive: true
+                  period: 20
+          test2:
+            host: 127.0.0.1
+            database: 1
+            key-serializer: string
+            value-serializer: string
+            hash-key-serializer: JSON
+            hash-value-serializer: JSON
+            lettuce:
+              cluster:
+                refresh:
+                  adaptive: true
+                  period: 20
   kafka:
     bootstrap-servers: 127.0.0.1:9092
     producer:
@@ -110,6 +101,9 @@ spring:
               packages: "*"
     listener:
       ack-mode: manual_immediate
+  http:
+    converters:
+      preferred-json-mapper: jackson
 
 mybatis-plus:
   type-aliases-package: io.github.pangju666.test.model.entity
@@ -132,9 +126,9 @@ pangju:
       binding: true
       exception: true
     rate-limit:
-      type: redisson
+      #type: redisson
     idempotent:
-      type: redis
+     # type: redis
     signature:
       secret-keys:
         test: test
@@ -143,7 +137,16 @@ pangju:
         topic: test
       disruptor:
         buffer-size: 1
+      enabled: false
+  image:
+    graphics-magick:
+      path: D:\dev-tool\GraphicsMagick-1.3.45-Q16\gm.exe
+    type: graphics_magick
 
 
   #logging:
   #config: classpath:log4j2/local.yml
+
+test-public-key: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCAUZyr9t2tBpqgVmhY5/kFmxEqjO2MEsGOvM5TB+E7AS7CbXmEG6bYDU2cj/3bUZg5SkSS8fhOyjN6M13tDsU4AXcaxxAqUA2f4gA/uDewMG/PJ1uM40lYaQD+XUlzhR9IsBLa4OfbzS16o1X+Dys3IBbq+yreuRURZiCA4WWOHQIDAQAB
+
+test-private-key: MIICdQIBADANBgkqhkiG9w0BAQEFAASCAl8wggJbAgEAAoGBAIBRnKv23a0GmqBWaFjn+QWbESqM7YwSwY68zlMH4TsBLsJteYQbptgNTZyP/dtRmDlKRJLx+E7KM3ozXe0OxTgBdxrHECpQDZ/iAD+4N7Awb88nW4zjSVhpAP5dSXOFH0iwEtrg59vNLXqjVf4PKzcgFur7Kt65FRFmIIDhZY4dAgMBAAECgYAVOWqIpxSTgfwheSlZS0VNQBDe0OCZwqBxU5ls8mi2scNiNWlcCJbYNZsYwlhi5mQfVcFx7MP9hERvef+XLlJAbNpKekhY0BtYnLTJ8OyKXiebSbcpXPVdZBWvpwcY29/if3vS57iSj12C4+IwZ3Pd9l9+LoKjDpLBgsRJ56Z8oQJBAMxM6Rz7f2Eb0Q0Rk9AlrCF377x/zoeyDoiVZtatuZ2z9w/rzrJnTjYGbpuK0+wKt00v6odG9sgafcZ6wbXCamMCQQCgymwf6AHUlcg3zdRkO7EN+hsWiazhAWlkyZc5vk2TtKl+L03YdPl4i1DEmoIjyCQj0w57DN3mQu9QKPFVMU1/AkAcdUYvlFTdCQvovx8Q6n58twE9B6yUOFhP7EfD9bUaY5wxqo5DSaKaYfD8V61HfwKjjN4lc9wiaZZFlInxMKCzAkAu9C2y+4tdSwgW07KMOqovjLPQVw/2/PSMDBpvMFVzJrTANowjA7W+L+C8KOqMDGwRUhbOdClwjmdYHzyqRiV9AkAfwTcXzgVnqhxD0x6buhdpVIc/Nu6Df7hGenbHUryNnod8uJkKUsb+4EvHkb6HxMQOXfBQq/WbqvLYen45fCuY
