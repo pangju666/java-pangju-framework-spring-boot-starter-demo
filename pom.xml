@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>io.github.pangju666</groupId>
-        <artifactId>pangju-framework-spring-boot-starter-parent</artifactId>
+        <groupId>io.github.pangju666.framework.boot</groupId>
+        <artifactId>framework-spring-boot-starter-parent</artifactId>
         <version>1.0.0</version>
     </parent>
     <artifactId>pangju-framework-spring-boot-starter-demo</artifactId>
@@ -17,65 +17,72 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<groupId>io.github.pangju666.framework.boot</groupId>
+			<artifactId>framework-spring-boot-starter</artifactId>
 		</dependency>
-
 		<dependency>
-			<groupId>io.github.pangju666</groupId>
-			<artifactId>pangju-framework-web</artifactId>
-			<version>1.0.0</version>
+			<groupId>io.github.pangju666.framework.boot</groupId>
+			<artifactId>framework-spring-boot-starter-concurrent</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.github.pangju666.framework.boot</groupId>
+			<artifactId>framework-spring-boot-starter-crypto</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.github.pangju666.framework.boot</groupId>
+			<artifactId>framework-spring-boot-starter-image</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.github.pangju666.framework.boot</groupId>
+			<artifactId>framework-spring-boot-starter-validation</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.github.pangju666.framework.boot</groupId>
+			<artifactId>framework-spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.github.pangju666.framework.boot</groupId>
+			<artifactId>framework-spring-boot-starter-data-redis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.github.pangju666.framework.boot</groupId>
+			<artifactId>framework-spring-boot-starter-data-mybatis-plus</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.github.pangju666.framework.boot</groupId>
+			<artifactId>framework-spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.github.pangju666.framework.boot</groupId>
+			<artifactId>framework-spring-boot-starter-web-validation</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.github.pangju666.framework.boot</groupId>
+			<artifactId>framework-spring-boot-starter-web-log</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.github.pangju666.framework.boot</groupId>
+			<artifactId>framework-spring-boot-starter-spock-test</artifactId>
 		</dependency>
 
 		<!--<dependency>
-			<groupId>io.github.pangju666</groupId>
-			<artifactId>pangju-framework-web-spring-boot-starter</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.github.pangju666</groupId>
-			<artifactId>pangju-framework-web-crypto-spring-boot-starter</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.github.pangju666</groupId>
-			<artifactId>pangju-framework-web-validation-spring-boot-starter</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.github.pangju666</groupId>
-			<artifactId>pangju-framework-web-log-spring-boot-starter</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>io.github.pangju666</groupId>
-			<artifactId>pangju-framework-data-mybatis-plus-spring-boot-starter</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.github.pangju666</groupId>
-			<artifactId>pangju-framework-data-redis-spring-boot-starter</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.github.pangju666</groupId>
-			<artifactId>pangju-framework-data-mongodb-spring-boot-starter</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>io.github.pangju666</groupId>
-			<artifactId>pangju-framework-validation-spring-boot-starter</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>-->
+		<!--<dependency>
+			<groupId>org.redisson</groupId>
+			<artifactId>redisson-spring-boot-starter</artifactId>
 		</dependency>-->
 
-		<dependency>
-			<groupId>io.github.pangju666</groupId>
-			<artifactId>pangju-framework-spock-test-spring-boot-starter</artifactId>
+		<!--<dependency>
+			<groupId>org.im4java</groupId>
+			<artifactId>im4java</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.sharneng</groupId>
+			<artifactId>gm4java</artifactId>
+		</dependency>-->
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-cache</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>com.fasterxml.jackson.dataformat</groupId>
-			<artifactId>jackson-dataformat-yaml</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -98,10 +105,6 @@
 				<groupId>com.ly.smart-doc</groupId>
 				<artifactId>smart-doc-maven-plugin</artifactId>
 			</plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
