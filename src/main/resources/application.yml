@@ -172,13 +172,16 @@ pangju:
     rate-limit:
       type: RESILIENCE4J
     idempotent:
-      type: redis
+      type: expire_map
     signature:
       secret-keys:
         test: test
     log:
       kafka:
         topic: test
+      enabled: true
+      slf4j:
+        logger: WebLogLogger
   concurrent:
     executor:
       key-based-lock:
@@ -190,4 +193,5 @@ pangju:
 
 
 logging:
-  config: classpath:logback/local.xml
+  #config: classpath:logback/local.xml
+  config: classpath:log4j2/local.yml
