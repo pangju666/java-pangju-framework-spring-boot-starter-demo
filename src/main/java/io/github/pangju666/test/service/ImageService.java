@@ -5,9 +5,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ImageService {
-	private final ImageTemplate<?> imageTemplate;
+	private final ImageTemplate imageTemplate;
 
-	public ImageService(ImageTemplate<?> imageTemplate) {
+	public ImageService(ImageTemplate imageTemplate) {
 		this.imageTemplate = imageTemplate;
 	}
 }

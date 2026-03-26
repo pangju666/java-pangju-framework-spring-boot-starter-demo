@@ -1,7 +1,7 @@
 package io.github.pangju666.test.service;
 
-import io.github.pangju666.test.documentt.Test1Document;
-import io.github.pangju666.test.documentt.Test2Document;
+import io.github.pangju666.test.document.Test1Document;
+import io.github.pangju666.test.document.Test2Document;
 import io.github.pangju666.test.repository.Test1Repository;
 import io.github.pangju666.test.repository.Test2Repository;
 import org.springframework.stereotype.Service;

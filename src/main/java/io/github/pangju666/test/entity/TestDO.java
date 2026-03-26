@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import io.github.pangju666.framework.boot.data.mybatisplus.model.entity.LogicBaseEntity;
+import io.github.pangju666.framework.boot.data.mybatisplus.entity.LogicBaseEntity;
 import io.github.pangju666.framework.data.mybatisplus.type.handler.JsonTypeHandler;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>io.github.pangju666.framework.boot</groupId>
-        <artifactId>framework-spring-boot-starter-parent</artifactId>
+        <artifactId>framework-starter-parent</artifactId>
         <version>1.0.0</version>
     </parent>
-    <artifactId>pangju-framework-spring-boot-starter-demo</artifactId>
-    <url>https://github.com/pangju666/java-pangju-framework-spring-boot-starter-demo</url>
+    <artifactId>pangju-framework-starter-demo</artifactId>
+    <url>https://github.com/pangju666/java-pangju-framework-starter-demo</url>
 
 	<properties>
 		<java.version>25</java.version>
@@ -18,7 +18,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>io.github.pangju666.framework.boot</groupId>
-			<artifactId>framework-spring-boot-starter</artifactId>
+			<artifactId>framework-starter-spring</artifactId>
 			<exclusions>
 				<exclusion>
 					<groupId>org.springframework.boot</groupId>
@@ -28,47 +28,43 @@
 		</dependency>
 		<dependency>
 			<groupId>io.github.pangju666.framework.boot</groupId>
-			<artifactId>framework-spring-boot-starter-concurrent</artifactId>
+			<artifactId>framework-starter-crypto</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>io.github.pangju666.framework.boot</groupId>
-			<artifactId>framework-spring-boot-starter-crypto</artifactId>
+			<artifactId>framework-starter-image</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>io.github.pangju666.framework.boot</groupId>
-			<artifactId>framework-spring-boot-starter-image</artifactId>
+			<artifactId>framework-starter-validation</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>io.github.pangju666.framework.boot</groupId>
-			<artifactId>framework-spring-boot-starter-validation</artifactId>
+			<artifactId>framework-starter-data-mongodb</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>io.github.pangju666.framework.boot</groupId>
-			<artifactId>framework-spring-boot-starter-data-mongodb</artifactId>
+			<artifactId>framework-starter-data-redis</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>io.github.pangju666.framework.boot</groupId>
-			<artifactId>framework-spring-boot-starter-data-redis</artifactId>
+			<artifactId>framework-starter-data-mybatis-plus</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>io.github.pangju666.framework.boot</groupId>
-			<artifactId>framework-spring-boot-starter-data-mybatis-plus</artifactId>
+			<artifactId>framework-starter-web</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>io.github.pangju666.framework.boot</groupId>
-			<artifactId>framework-spring-boot-starter-web</artifactId>
+			<artifactId>framework-starter-web-validation</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>io.github.pangju666.framework.boot</groupId>
-			<artifactId>framework-spring-boot-starter-web-validation</artifactId>
+			<artifactId>framework-starter-web-log</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>io.github.pangju666.framework.boot</groupId>
-			<artifactId>framework-spring-boot-starter-web-log</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.github.pangju666.framework.boot</groupId>
-			<artifactId>framework-spring-boot-starter-spock-test</artifactId>
+			<artifactId>framework-starter-test-spock</artifactId>
 		</dependency>
 
 		<dependency>
@@ -87,7 +83,7 @@
 		</dependency>-->
 		<!--<dependency>
 			<groupId>org.redisson</groupId>
-			<artifactId>redisson-spring-boot-starter</artifactId>
+			<artifactId>redisson-starter</artifactId>
 		</dependency>-->
 
 		<!--<dependency>

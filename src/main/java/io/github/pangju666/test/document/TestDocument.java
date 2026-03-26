@@ -1,4 +1,4 @@
-package io.github.pangju666.test.documentt;
+package io.github.pangju666.test.document;
 
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
